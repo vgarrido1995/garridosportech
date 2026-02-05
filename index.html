@@ -1,0 +1,1099 @@
+﻿<!-- Deploy: 2026-02-02 03:58:31 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garrido Sportech | Tecnología para el Rendimiento Humano</title>
+    <meta name="description" content="Soluciones tecnológicas para el análisis del rendimiento humano y la salud deportiva. Biomecánica, sensores y análisis aplicado.">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Garrido Sportech | Tecnología para el Rendimiento Humano">
+    <meta property="og:description" content="Soluciones tecnológicas para evaluar fuerza, velocidad y control neuromuscular en contextos deportivos y clínicos.">
+    <meta property="og:image" content="Garrido negro.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a1628;
+            --secondary: #1e3a5f;
+            --accent: #00d4aa;
+            --accent-hover: #00b894;
+            --text: #ffffff;
+            --text-muted: #a0aec0;
+            --bg-dark: #050d18;
+            --bg-card: rgba(30, 58, 95, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 13, 24, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 212, 170, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 45px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary) 50%, var(--secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,212,170,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-logo {
+            width: 280px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        #nosotros {
+            background: var(--primary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Products Section */
+        #soluciones {
+            background: var(--bg-dark);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 170, 0.1);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 212, 170, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .product-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Publications Section */
+        #publicaciones {
+            background: var(--bg-dark);
+        }
+
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .publication-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 212, 170, 0.1);
+            transition: all 0.3s;
+        }
+
+        .publication-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .publication-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .publication-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .publication-meta {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .publication-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .publication-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .publication-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Clients Section */
+        #sectores {
+            background: var(--primary);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .client-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 212, 170, 0.1);
+            transition: all 0.3s;
+        }
+
+        .client-card:hover {
+            border-color: var(--accent);
+        }
+
+        .client-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .client-card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .client-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        #contacto {
+            background: var(--bg-dark);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--bg-card);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 212, 170, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 170, 0.1);
+        }
+
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Downloads Section */
+        #descargas {
+            background: var(--primary);
+        }
+
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .download-category {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 212, 170, 0.1);
+            text-align: center;
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .download-category h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .download-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .download-btn.windows { background: #0078D4; color: white; }
+        .download-btn.windows:hover { background: #006BC1; }
+        .download-btn.mac { background: #555555; color: white; }
+        .download-btn.mac:hover { background: #444444; }
+        .download-btn.linux { background: #FCC624; color: #333; }
+        .download-btn.linux:hover { background: #E4B020; }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7); }
+            100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-logo {
+                width: 200px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .publications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <img src="Garrido blanco.jpg" alt="Garrido Sportech" class="logo">
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#soluciones">Soluciones</a></li>
+                <li><a href="#publicaciones">Publicaciones</a></li>
+                <li><a href="#sectores">Sectores</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#descargas">Descargas</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <img src="Garrido blanco.jpg" alt="Garrido Sportech" class="hero-logo">
+            <h1>Tecnología aplicada al <span>movimiento</span> y al <span>rendimiento humano</span></h1>
+            <p>Desarrollamos soluciones para evaluar fuerza, velocidad y control neuromuscular en contextos deportivos y clínicos. Conecta la ciencia con la práctica.</p>
+            <a href="https://wa.me/56921711836?text=Hola,%20me%20interesa%20conocer%20mas%20sobre%20Garrido%20Sportech" target="_blank" class="cta-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Contactar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Nosotros</h2>
+                <div class="accent-line"></div>
+                <p>Referentes en integración de soluciones tecnológicas para el análisis del rendimiento</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>Garrido Sportech</strong> es una empresa referente en la integración de soluciones tecnológicas para el análisis del rendimiento humano y la salud deportiva.</p>
+                    <p>Trabajamos con centros de alto rendimiento, clínicas y universidades, proporcionando herramientas de medición precisas y confiables que permiten transformar la evaluación física en información objetiva para la toma de decisiones.</p>
+                    <p>Nuestro enfoque combina <strong>biomecánica, sensores y análisis aplicado</strong>, con el objetivo de apoyar tanto la investigación científica como la práctica clínica y deportiva, contribuyendo a mejorar los procesos de evaluación, entrenamiento y rehabilitación.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">&#128300;</div>
+                            <div class="stat-label">Biomecánica</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">&#128202;</div>
+                            <div class="stat-label">Análisis de Datos</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">&#9889;</div>
+                            <div class="stat-label">Sensores</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="Plataformas de fuerza.jfif" alt="Plataformas de fuerza Garrido Sportech">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="soluciones">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestras Soluciones</h2>
+                <div class="accent-line"></div>
+                <p>Tecnología de vanguardia para la medición y análisis del movimiento humano</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <img src="Plataformas de fuerza.jfif" alt="Plataformas de Fuerza" class="product-image">
+                    <div class="product-content">
+                        <h3>Plataformas de Fuerza</h3>
+                        <p>Sistemas orientados a la valoración cinética del movimiento en condiciones dinámicas y estáticas. Medición precisa de fuerzas de reacción.</p>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <img src="Celda de carga.jfif" alt="Celdas de Carga" class="product-image">
+                    <div class="product-content">
+                        <h3>Celdas de Carga</h3>
+                        <p>Utilizadas para la medición de fuerza y tensión en evaluaciones isométricas. Alta precisión para análisis de rendimiento muscular.</p>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <img src="plataforma de contacto.jfif" alt="Plataforma de Contacto" class="product-image">
+                    <div class="product-content">
+                        <h3>Plataforma de Contacto</h3>
+                        <p>Destinada a la valoración de tiempos de contacto y tiempos de vuelo. Ideal para evaluar capacidad de salto y potencia.</p>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <img src="Adaptadores.jfif" alt="Adaptadores de Muslo" class="product-image">
+                    <div class="product-content">
+                        <h3>Adaptadores de Muslo</h3>
+                        <p>Sistemas de sujeción para sensores aplicados al análisis cinemático. Facilitan la captura de datos de movimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publicaciones">
+        <div class="container">
+            <div class="section-title">
+                <h2>Publicaciones Científicas</h2>
+                <div class="accent-line"></div>
+                <p>Investigación validada y publicada en revistas científicas indexadas</p>
+            </div>
+            <div class="publications-grid">
+                <div class="publication-card fade-in-left">
+                    <span class="publication-badge">Applied Sciences - 2025</span>
+                    <h3>Reliability and Repeatability of the Low-Cost G-Force Load Cell System in Isometric Hip Abduction and Adduction Tests</h3>
+                    <p class="publication-meta">Garrido-Osorio V., Fuentes-Barria H., et al.</p>
+                    <p>Estudio piloto que evalúa la confiabilidad del sistema G-Force de celdas de carga en tests isométricos de cadera. Peak Force mostró excelente confiabilidad (ICC = 0.94-0.96).</p>
+                    <a href="https://www.mdpi.com/2076-3417/15/21/11457" target="_blank" class="publication-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V7h7V5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+                        Ver publicación en MDPI
+                    </a>
+                </div>
+                <div class="publication-card fade-in-right">
+                    <span class="publication-badge">Applied Sciences - 2025</span>
+                    <h3>Validation of the G-Force Platform for Isometric Tests in Physically Active Young Adults</h3>
+                    <p class="publication-meta">Garrido-Osorio V., Fuentes-Barria H., et al.</p>
+                    <p>Validación de la plataforma G-Force comparada con gold standard. Demuestra que es una herramienta válida, confiable y de bajo costo para evaluación de fuerza isométrica.</p>
+                    <a href="https://www.mdpi.com/2076-3417/15/23/12409" target="_blank" class="publication-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V7h7V5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+                        Ver publicación en MDPI
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="sectores">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sectores que Atendemos</h2>
+                <div class="accent-line"></div>
+                <p>Soluciones adaptadas a diferentes contextos profesionales</p>
+            </div>
+            <div class="clients-grid">
+                <div class="client-card fade-in">
+                    <div class="client-icon">&#127942;</div>
+                    <h3>Alto Rendimiento</h3>
+                    <p>Centros deportivos y equipos profesionales que buscan optimizar el rendimiento de sus atletas con datos precisos.</p>
+                </div>
+                <div class="client-card fade-in">
+                    <div class="client-icon">&#127973;</div>
+                    <h3>Clínicas</h3>
+                    <p>Centros de rehabilitación y fisioterapia que requieren herramientas objetivas para evaluar y monitorear la recuperación.</p>
+                </div>
+                <div class="client-card fade-in">
+                    <div class="client-icon">&#127891;</div>
+                    <h3>Universidades</h3>
+                    <p>Instituciones académicas dedicadas a la investigación científica en biomecánica, fisiología y ciencias del deporte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <div class="accent-line"></div>
+                <p>¿Interesado en nuestras soluciones? Conversemos</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Conecta con nosotros</h3>
+                    <p>Contáctanos directamente por WhatsApp o síguenos en Instagram para conocer más sobre nuestras soluciones y novedades en tecnología deportiva.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/56921711836?text=Hola,%20me%20interesa%20conocer%20mas%20sobre%20las%20soluciones%20de%20Garrido%20Sportech" target="_blank" class="social-link" style="background: #25D366;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            +56 9 2171 1836
+                        </a>
+                        <a href="https://www.instagram.com/garrido_sportech/" target="_blank" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            @garrido_sportech
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/vgarrido@fitbike.cl" method="POST">
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde Garrido Sportech">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://vgarrido1995.github.io/garridosportech/?enviado=true">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde Garrido Sportech">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://vgarrido1995.github.io/garridosportech/?gracias=1">
+                        <input type="text" name="_honey" style="display:none">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" required placeholder="¿En qué podemos ayudarte?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="descargas">
+        <div class="container">
+            <div class="section-title">
+                <h2>Descargas</h2>
+                <div class="accent-line"></div>
+                <p>Software y drivers para tus dispositivos G-Force</p>
+            </div>
+            
+            <div class="downloads-grid">
+                <div class="download-category fade-in">
+                    <div class="category-icon"></div>
+                    <h3>Software Windows</h3>
+                    <div class="download-items">
+                        <a href="https://github.com/vgarrido1995/garridosportech/raw/main/software/GFORCE_Pro_v8.exe" class="download-btn" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            G-Force Pro v8 - Isometría</a>
+                        <a href="https://github.com/vgarrido1995/garridosportech/raw/main/software/GARRIDO_JumpAnalyzer_Pro.exe" class="download-btn" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            Force Plate Jump Pro - Saltos
+                        </a>
+                        <a href="https://github.com/vgarrido1995/garridosportech/releases/download/v1.0/GFORCE_v7.3.exe" class="download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            G-Force v7 - Isometría
+                        </a>
+                        <a href="https://github.com/vgarrido1995/garridosportech/releases/download/v1.0/GFORCE_JumpPlate_v1.2.exe" class="download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            G-Force JumpPlate v1 - Saltos
+                        </a>
+                        <a href="https://github.com/vgarrido1995/garridosportech/releases/download/v1.0/GarridoJump_v3.4.exe" class="download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                            Garrido Jump v3 - Contacto
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="download-category fade-in">
+                    <div class="category-icon"></div>
+                    <h3>Drivers por Sistema Operativo</h3>
+                    <div class="download-items">
+                        <a href="https://github.com/vgarrido1995/garridosportech/releases/download/v1.0/CH34x_Install_Windows_v3_4.zip" class="download-btn windows">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .15V5.21L20 3zM3 13l6 .09v6.81l-6-1.15V13zm17 .25V22l-10-1.91V13.1l10 .15z"/></svg>
+                            Windows
+                        </a>
+                        <a href="https://github.com/vgarrido1995/garridosportech/releases/download/v1.0/CH341SER_MAC_V1_8.zip" class="download-btn mac">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            macOS
+                        </a>
+                        <a href="https://github.com/vgarrido1995/garridosportech/releases/download/v1.0/CH340_LINUX.zip" class="download-btn linux">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.002c-.06-.135-.12-.2-.184-.268-.193-.135-.406-.199-.603-.136-.268.068-.46.268-.623.401-.19.135-.384.269-.634.467a1.397 1.397 0 01-.61.267 1.142 1.142 0 01-.481-.066c-.6-.269-1.139-.601-1.805-.869-.34-.134-.69-.2-.857-.134-.32.134-.199.534.134.869.165.135.394.267.59.401.252.2.463.333.602.468.139.134.243.267.324.333v.003c.102.135.124.267.074.4-.054.135-.14.2-.327.267-.187.067-.376.135-.645.135-.473 0-1.035-.2-1.633-.267-.635-.066-1.318-.065-2.084.135-.18.048-.357.1-.535.201-.09.054-.178.131-.263.2h-.004c-.704.533-1.167.468-1.357.2-.19-.268-.07-.667.167-.934.067-.066.167-.133.27-.198a4.59 4.59 0 00.47-.334c.066-.067.135-.135.135-.267s-.063-.267-.196-.4c-.135-.135-.337-.268-.54-.401a15.27 15.27 0 01-1.035-.735 2.411 2.411 0 01-.426-.533 1.26 1.26 0 01-.074-.468c.015-.2.076-.399.2-.601.126-.268.302-.469.544-.67.245-.2.533-.334.853-.468l.147-.07v-.003a.96.96 0 00.163-.135c.187-.2.38-.467.453-.735.067-.2.034-.4-.133-.534-.167-.135-.4-.2-.667-.2-.467 0-.867.135-1.167.2-.034.006-.065.02-.1.027a.9.9 0 01.002-.004c.207-.467.467-.869.79-1.135.41-.333.893-.467 1.444-.467.39 0 .738.065 1.082.132.346.066.687.135 1.033.2.467.067.867.065 1.2-.069a.92.92 0 00.468-.4c.135-.2.2-.47.166-.736-.033-.2-.1-.401-.166-.535-.067-.135-.167-.267-.267-.4v-.002c-.2-.266-.417-.468-.651-.6-.234-.135-.468-.2-.7-.2-.234 0-.45.066-.634.133a3.893 3.893 0 00-.534.266c-.135.068-.267.135-.4.202-.135.067-.2.066-.268 0-.066-.066-.1-.2-.066-.333.033-.066.099-.135.164-.2.067-.065.135-.135.2-.133h.003c.135.002.234.069.334.068.102 0 .2-.032.269-.1.067-.069.067-.135.067-.27l-.002-.003z"/></svg>
+                            Linux
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/56921711836?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20Garrido%20Sportech" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <img src="Garrido blanco.jpg" alt="Garrido Sportech" class="footer-logo">
+        <p>© 2026 Garrido Sportech. Tecnología aplicada al rendimiento humano.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(5, 13, 24, 0.98)';
+            } else {
+                nav.style.background = 'rgba(5, 13, 24, 0.95)';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'rgba(5, 13, 24, 0.98)';
+            navLinks.style.padding = '1rem 2rem';
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
