@@ -13,7 +13,9 @@
   "use strict";
 
   // ── Configuración ───────────────────────────────────────────────────
-  const scriptTag = document.currentScript || document.querySelector('script[data-api]');
+  // Buscar el script tag antes de que se pierda la referencia
+  const allScripts = document.querySelectorAll('script[data-api]');
+  const scriptTag = allScripts.length > 0 ? allScripts[allScripts.length - 1] : null;
   const API_URL = (scriptTag && scriptTag.getAttribute("data-api")) || "http://localhost:8000";
 
   let sessionId = null;
@@ -24,28 +26,28 @@
   const styles = document.createElement("style");
   styles.textContent = `
     #gs-chat-widget * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      box-sizing: border-box !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
     }
 
     #gs-chat-btn {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: fixed !important;
+      bottom: 100px !important;
+      right: 24px !important;
+      width: 64px !important;
+      height: 64px !important;
+      border-radius: 50% !important;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+      border: none !important;
+      cursor: pointer !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+      z-index: 999999 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     }
 
     #gs-chat-btn:hover {
@@ -80,9 +82,9 @@
     }
 
     #gs-chat-window {
-      position: fixed;
-      bottom: 100px;
-      right: 24px;
+      position: fixed !important;
+      bottom: 176px !important;
+      right: 24px !important;
       width: 400px;
       max-width: calc(100vw - 32px);
       height: 560px;
@@ -90,7 +92,7 @@
       background: #ffffff;
       border-radius: 16px;
       box-shadow: 0 12px 48px rgba(0,0,0,0.2);
-      z-index: 99998;
+      z-index: 999998 !important;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -355,24 +357,24 @@
     /* Mobile */
     @media (max-width: 480px) {
       #gs-chat-window {
-        bottom: 0;
-        right: 0;
-        width: 100vw;
-        height: 100vh;
-        max-height: 100vh;
-        border-radius: 0;
+        bottom: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
       }
 
       #gs-chat-btn {
-        bottom: 16px;
-        right: 16px;
-        width: 56px;
-        height: 56px;
+        bottom: 90px !important;
+        right: 16px !important;
+        width: 56px !important;
+        height: 56px !important;
       }
 
       #gs-chat-btn .pulse {
-        width: 56px;
-        height: 56px;
+        width: 56px !important;
+        height: 56px !important;
       }
     }
   `;
