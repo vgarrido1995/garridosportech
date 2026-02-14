@@ -378,6 +378,46 @@
             text-decoration: underline;
         }
 
+        .publications-subcategory {
+            margin-bottom: 3rem;
+        }
+
+        .publications-subcategory:last-child {
+            margin-bottom: 0;
+        }
+
+        .subcategory-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(0, 212, 170, 0.2);
+        }
+
+        .subcategory-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .subcategory-header h3 {
+            font-size: 1.3rem;
+            color: var(--text);
+        }
+
+        .subcategory-header p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+
         /* Clients Section */
         #sectores {
             background: var(--primary);
@@ -857,28 +897,63 @@
                 <div class="accent-line"></div>
                 <p>Investigación validada y publicada en revistas científicas indexadas</p>
             </div>
-            <div class="publications-grid">
-                <div class="publication-card fade-in-left">
-                    <span class="publication-badge">Applied Sciences - 2025</span>
-                    <h3>Reliability and Repeatability of the Low-Cost G-Force Load Cell System in Isometric Hip Abduction and Adduction Tests</h3>
-                    <p class="publication-meta">Garrido-Osorio V., Fuentes-Barria H., et al.</p>
-                    <p>Estudio piloto que evalúa la confiabilidad del sistema G-Force de celdas de carga en tests isométricos de cadera. Peak Force mostró excelente confiabilidad (ICC = 0.94-0.96).</p>
-                    <a href="https://www.mdpi.com/2076-3417/15/21/11457" target="_blank" class="publication-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V7h7V5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
-                        Ver publicación en MDPI
-                    </a>
+
+            <!-- Subcategoría 1: Estudios de Validación -->
+            <div class="publications-subcategory">
+                <div class="subcategory-header">
+                    <div class="subcategory-icon">&#9989;</div>
+                    <div>
+                        <h3>Estudios de Validación</h3>
+                        <p>Investigaciones que validan la confiabilidad y precisión de nuestra tecnología G-Force</p>
+                    </div>
                 </div>
-                <div class="publication-card fade-in-right">
-                    <span class="publication-badge">Applied Sciences - 2025</span>
-                    <h3>Validation of the G-Force Platform for Isometric Tests in Physically Active Young Adults</h3>
-                    <p class="publication-meta">Garrido-Osorio V., Fuentes-Barria H., et al.</p>
-                    <p>Validación de la plataforma G-Force comparada con gold standard. Demuestra que es una herramienta válida, confiable y de bajo costo para evaluación de fuerza isométrica.</p>
-                    <a href="https://www.mdpi.com/2076-3417/15/23/12409" target="_blank" class="publication-link">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V7h7V5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
-                        Ver publicación en MDPI
-                    </a>
+                <div class="publications-grid">
+                    <div class="publication-card fade-in-left">
+                        <span class="publication-badge">Applied Sciences - 2025</span>
+                        <h3>Reliability and Repeatability of the Low-Cost G-Force Load Cell System in Isometric Hip Abduction and Adduction Tests</h3>
+                        <p class="publication-meta">Garrido-Osorio V., Fuentes-Barria H., et al.</p>
+                        <p>Estudio piloto que evalúa la confiabilidad del sistema G-Force de celdas de carga en tests isométricos de cadera. Peak Force mostró excelente confiabilidad (ICC = 0.94-0.96).</p>
+                        <a href="https://www.mdpi.com/2076-3417/15/21/11457" target="_blank" class="publication-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V7h7V5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+                            Ver publicación en MDPI
+                        </a>
+                    </div>
+                    <div class="publication-card fade-in-right">
+                        <span class="publication-badge">Applied Sciences - 2025</span>
+                        <h3>Validation of the G-Force Platform for Isometric Tests in Physically Active Young Adults</h3>
+                        <p class="publication-meta">Garrido-Osorio V., Fuentes-Barria H., et al.</p>
+                        <p>Validación de la plataforma G-Force comparada con gold standard. Demuestra que es una herramienta válida, confiable y de bajo costo para evaluación de fuerza isométrica.</p>
+                        <a href="https://www.mdpi.com/2076-3417/15/23/12409" target="_blank" class="publication-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V7h7V5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+                            Ver publicación en MDPI
+                        </a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Subcategoría 2: Estudios Realizados con Tecnología G-Force -->
+            <div class="publications-subcategory">
+                <div class="subcategory-header">
+                    <div class="subcategory-icon">&#128300;</div>
+                    <div>
+                        <h3>Estudios Realizados con Tecnología G-Force</h3>
+                        <p>Investigaciones de terceros que utilizan nuestros dispositivos como instrumento de medición</p>
+                    </div>
+                </div>
+                <div class="publications-grid">
+                    <div class="publication-card fade-in-left">
+                        <span class="publication-badge">Emergentes - Revista Científica - 2026</span>
+                        <h3>Determinantes neuromusculares de la abducción de cadera en MMA de alto rendimiento</h3>
+                        <p class="publication-meta">Lozano Martínez K.O., Molina Hernández V.P., Miranda Flores D.P., Landa Pérez L.A.</p>
+                        <p>Estudio transversal en atletas de MMA de alto rendimiento que describe la tasa de desarrollo de la fuerza (RFD) durante la abducción de cadera y su relación con variables de proporcionalidad corporal e hidratación, utilizando celdas de carga G-Force.</p>
+                        <a href="https://doi.org/10.60112/erc.v6.i1.671" target="_blank" class="publication-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V7h7V5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+                            Ver publicación en Revista Emergentes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
